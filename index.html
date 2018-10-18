@@ -8,13 +8,16 @@
     <h5>您的账户余额是<span id="amount">&&&amount&&&</span></h5>
     <button id="button">打钱</button>
     <script>
-        window.xxx = function(result){
-            alert('这是frank写的前端代码')
-            alert(`我得到的结果是${result}`)
+        window.yyy = function(result){
+            if(result === 'success'){
+                amount.innerText = amount.innerText - 1
+            }else{
+
+            }
         }
         button.addEventListener('click', (e)=>{
             let script = document.createElement('script')
-            script.src = 'http://jack.com:8002/pay?callbackName=xxx'
+            script.src = 'http://jack.com:8002/pay?callbackName=yyy'
             document.body.appendChild(script)
             script.onload = function(e) {
                 e.currentTarget.remove()
