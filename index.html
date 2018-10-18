@@ -14,7 +14,7 @@
         }
         button.addEventListener('click', (e)=>{
             let script = document.createElement('script')
-            script.src = 'http://jack.com:8002/pay'
+            script.src = 'http://jack.com:8002/pay?callbackName=xxx'
             document.body.appendChild(script)
             script.onload = function(e) {
                 e.currentTarget.remove()
