@@ -44,7 +44,11 @@ var server = http.createServer(function(request, response){
       response.setHeader('Content-Type','application/javascript')
       response.statusCode = 200
       response.write(`
-        $(query.callbackName}.call(undefined,'success')
+        $(query.callbackName}.call(undefined,{
+          "success": true,
+          "left": ${newamount}
+        })
+        //JSON + padding = JSONP
       `)
       response.end()
   } else {
